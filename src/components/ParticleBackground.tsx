@@ -1,11 +1,14 @@
 import { useEffect, useRef } from 'react';
 
-interface Particle {
+interface FloatingShape {
   x: number;
   y: number;
-  vx: number;
-  vy: number;
   size: number;
+  speedX: number;
+  speedY: number;
+  rotation: number;
+  rotationSpeed: number;
+  type: 'circle' | 'square' | 'triangle';
 }
 
 export const ParticleBackground = () => {
@@ -25,55 +28,73 @@ export const ParticleBackground = () => {
     setCanvasSize();
     window.addEventListener('resize', setCanvasSize);
 
-    const particles: Particle[] = [];
-    const particleCount = 80;
-    const connectionDistance = 150;
+    const shapes: FloatingShape[] = [];
+    const shapeCount = 15;
 
-    // Initialize particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
+    // Initialize floating shapes
+    for (let i = 0; i < shapeCount; i++) {
+      const types: ('circle' | 'square' | 'triangle')[] = ['circle', 'square', 'triangle'];
+      shapes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        size: Math.random() * 2 + 1,
+        size: Math.random() * 60 + 40,
+        speedX: (Math.random() - 0.5) * 0.3,
+        speedY: (Math.random() - 0.5) * 0.3,
+        rotation: Math.random() * Math.PI * 2,
+        rotationSpeed: (Math.random() - 0.5) * 0.01,
+        type: types[Math.floor(Math.random() * types.length)],
       });
     }
+
+    const drawShape = (shape: FloatingShape) => {
+      ctx.save();
+      ctx.translate(shape.x, shape.y);
+      ctx.rotate(shape.rotation);
+      
+      const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, shape.size);
+      gradient.addColorStop(0, 'rgba(236, 72, 153, 0.15)');
+      gradient.addColorStop(1, 'rgba(236, 72, 153, 0)');
+      
+      ctx.fillStyle = gradient;
+      ctx.strokeStyle = 'rgba(236, 72, 153, 0.3)';
+      ctx.lineWidth = 2;
+
+      if (shape.type === 'circle') {
+        ctx.beginPath();
+        ctx.arc(0, 0, shape.size / 2, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+      } else if (shape.type === 'square') {
+        ctx.fillRect(-shape.size / 2, -shape.size / 2, shape.size, shape.size);
+        ctx.strokeRect(-shape.size / 2, -shape.size / 2, shape.size, shape.size);
+      } else if (shape.type === 'triangle') {
+        ctx.beginPath();
+        ctx.moveTo(0, -shape.size / 2);
+        ctx.lineTo(shape.size / 2, shape.size / 2);
+        ctx.lineTo(-shape.size / 2, shape.size / 2);
+        ctx.closePath();
+        ctx.fill();
+        ctx.stroke();
+      }
+      
+      ctx.restore();
+    };
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // Update and draw particles
-      particles.forEach((particle, i) => {
-        particle.x += particle.vx;
-        particle.y += particle.vy;
+      shapes.forEach((shape) => {
+        shape.x += shape.speedX;
+        shape.y += shape.speedY;
+        shape.rotation += shape.rotationSpeed;
 
-        // Bounce off edges
-        if (particle.x < 0 || particle.x > canvas.width) particle.vx *= -1;
-        if (particle.y < 0 || particle.y > canvas.height) particle.vy *= -1;
+        // Wrap around screen
+        if (shape.x < -shape.size) shape.x = canvas.width + shape.size;
+        if (shape.x > canvas.width + shape.size) shape.x = -shape.size;
+        if (shape.y < -shape.size) shape.y = canvas.height + shape.size;
+        if (shape.y > canvas.height + shape.size) shape.y = -shape.size;
 
-        // Draw particle
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(236, 72, 153, 0.6)'; // Pink color
-        ctx.fill();
-
-        // Draw connections
-        particles.slice(i + 1).forEach((otherParticle) => {
-          const dx = particle.x - otherParticle.x;
-          const dy = particle.y - otherParticle.y;
-          const distance = Math.sqrt(dx * dx + dy * dy);
-
-          if (distance < connectionDistance) {
-            ctx.beginPath();
-            ctx.moveTo(particle.x, particle.y);
-            ctx.lineTo(otherParticle.x, otherParticle.y);
-            const opacity = (1 - distance / connectionDistance) * 0.3;
-            ctx.strokeStyle = `rgba(249, 168, 212, ${opacity})`; // Light pink color
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        });
+        drawShape(shape);
       });
 
       requestAnimationFrame(animate);
@@ -89,7 +110,7 @@ export const ParticleBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 pointer-events-none opacity-40"
+      className="absolute inset-0 pointer-events-none opacity-50"
       style={{ zIndex: 0 }}
     />
   );
