@@ -1,10 +1,14 @@
 import { ArrowRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
+import { ParticleBackground } from "./ParticleBackground";
+import { DotGridBackground } from "./DotGridBackground";
 
 export const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16 animated-bg">
+    <section id="home" className="min-h-screen flex items-center pt-16 animated-bg relative">
+      <ParticleBackground />
+      <DotGridBackground />
       <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
