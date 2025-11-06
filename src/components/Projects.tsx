@@ -2,6 +2,7 @@ import { ExternalLink, TestTube } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const projects = [
   {
@@ -14,8 +15,10 @@ const projects = [
 ];
 
 export const Projects = () => {
+  const { ref, isVisible } = useScrollReveal();
+  
   return (
-    <section id="projects" className="bg-[hsl(var(--section-alt-bg))]">
+    <section id="projects" ref={ref} className={`bg-[hsl(var(--section-alt-bg))] section-reveal ${isVisible ? 'visible' : ''}`}>
       <div className="section-container">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-fade-in">

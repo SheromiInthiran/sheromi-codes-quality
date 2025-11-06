@@ -1,9 +1,12 @@
 import { Briefcase } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const Experience = () => {
+  const { ref, isVisible } = useScrollReveal();
+  
   return (
-    <section id="experience" className="bg-[hsl(var(--section-bg))]">
+    <section id="experience" ref={ref} className={`bg-[hsl(var(--section-bg))] section-slide-left ${isVisible ? 'visible' : ''}`}>
       <div className="section-container">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4 animate-fade-in">

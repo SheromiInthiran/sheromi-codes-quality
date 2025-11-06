@@ -55,7 +55,7 @@ export const ParticleBackground = () => {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(167, 139, 250, 0.6)'; // Purple color
+        ctx.fillStyle = 'rgba(236, 72, 153, 0.6)'; // Pink color
         ctx.fill();
 
         // Draw connections
@@ -69,7 +69,7 @@ export const ParticleBackground = () => {
             ctx.moveTo(particle.x, particle.y);
             ctx.lineTo(otherParticle.x, otherParticle.y);
             const opacity = (1 - distance / connectionDistance) * 0.3;
-            ctx.strokeStyle = `rgba(56, 189, 248, ${opacity})`; // Cyan color
+            ctx.strokeStyle = `rgba(249, 168, 212, ${opacity})`; // Light pink color
             ctx.lineWidth = 1;
             ctx.stroke();
           }

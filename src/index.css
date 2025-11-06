@@ -8,41 +8,41 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 340 100% 98%;
+    --foreground: 340 50% 15%;
 
-    --card: 240 10% 5.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 340 50% 15%;
 
-    --popover: 240 10% 5.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 50% 15%;
 
-    --primary: 263 70% 50%;
+    --primary: 340 82% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 340 100% 95%;
+    --secondary-foreground: 340 50% 15%;
 
-    --muted: 240 5% 15%;
-    --muted-foreground: 240 5% 65%;
+    --muted: 340 60% 96%;
+    --muted-foreground: 340 20% 45%;
 
-    --accent: 210 100% 50%;
+    --accent: 320 85% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5% 15%;
-    --input: 240 5% 15%;
-    --ring: 263 70% 50%;
+    --border: 340 30% 90%;
+    --input: 340 30% 92%;
+    --ring: 340 82% 52%;
 
     --radius: 0.75rem;
 
     /* Custom portfolio colors */
-    --hero-gradient-from: 263 70% 50%;
-    --hero-gradient-to: 210 100% 50%;
-    --section-bg: 240 10% 5.9%;
-    --section-alt-bg: 240 10% 8%;
+    --hero-gradient-from: 340 82% 52%;
+    --hero-gradient-to: 320 85% 60%;
+    --section-bg: 0 0% 100%;
+    --section-alt-bg: 340 100% 97%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -55,38 +55,38 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 98%;
-    --foreground: 240 10% 10%;
+    --background: 340 15% 10%;
+    --foreground: 340 100% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 10%;
+    --card: 340 20% 12%;
+    --card-foreground: 340 100% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 10%;
+    --popover: 340 20% 12%;
+    --popover-foreground: 340 100% 98%;
 
-    --primary: 263 70% 50%;
+    --primary: 340 82% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 5% 96%;
-    --secondary-foreground: 240 10% 10%;
+    --secondary: 340 15% 18%;
+    --secondary-foreground: 340 100% 98%;
 
-    --muted: 240 5% 96%;
-    --muted-foreground: 240 5% 45%;
+    --muted: 340 15% 18%;
+    --muted-foreground: 340 30% 70%;
 
-    --accent: 210 100% 50%;
+    --accent: 320 85% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 5% 90%;
-    --input: 240 5% 90%;
-    --ring: 263 70% 50%;
+    --border: 340 20% 20%;
+    --input: 340 20% 20%;
+    --ring: 340 82% 52%;
 
-    --hero-gradient-from: 263 70% 50%;
-    --hero-gradient-to: 210 100% 50%;
-    --section-bg: 0 0% 100%;
-    --section-alt-bg: 240 5% 98%;
+    --hero-gradient-from: 340 82% 52%;
+    --hero-gradient-to: 320 85% 60%;
+    --section-bg: 340 15% 10%;
+    --section-alt-bg: 340 20% 14%;
 
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
@@ -141,10 +141,10 @@ All colors MUST be HSL.
 
   .animated-bg::before {
     content: '';
-    @apply absolute inset-0 opacity-30;
-    background: radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, hsl(var(--accent) / 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, hsl(var(--hero-gradient-to) / 0.2) 0%, transparent 50%);
+    @apply absolute inset-0 opacity-20;
+    background: radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, hsl(var(--accent) / 0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, hsl(var(--hero-gradient-to) / 0.3) 0%, transparent 50%);
     animation: float 20s ease-in-out infinite;
   }
 
@@ -158,5 +158,38 @@ All colors MUST be HSL.
     66% {
       transform: translate(-20px, 20px) scale(0.9);
     }
+  }
+
+  .section-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .section-reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .section-slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .section-slide-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .section-slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+
+  .section-slide-right.visible {
+    opacity: 1;
+    transform: translateX(0);
   }
 }

@@ -5,9 +5,11 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const Contact = () => {
   const { toast } = useToast();
+  const { ref, isVisible } = useScrollReveal();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -51,7 +53,7 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="bg-[hsl(var(--section-alt-bg))]">
+    <section id="contact" ref={ref} className={`bg-[hsl(var(--section-alt-bg))] section-slide-right ${isVisible ? 'visible' : ''}`}>
       <div className="section-container">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-fade-in">

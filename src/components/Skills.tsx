@@ -1,5 +1,6 @@
 import { Code, Database, TestTube, Wrench, Users, Sparkles } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const skillCategories = [
   {
@@ -41,8 +42,10 @@ const skillCategories = [
 ];
 
 export const Skills = () => {
+  const { ref, isVisible } = useScrollReveal();
+  
   return (
-    <section id="skills" className="bg-[hsl(var(--section-alt-bg))]">
+    <section id="skills" ref={ref} className={`bg-[hsl(var(--section-alt-bg))] section-slide-right ${isVisible ? 'visible' : ''}`}>
       <div className="section-container">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-fade-in">

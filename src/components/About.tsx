@@ -1,10 +1,13 @@
 import { GraduationCap, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export const About = () => {
+  const { ref, isVisible } = useScrollReveal();
+  
   return (
-    <section id="about" className="bg-[hsl(var(--section-alt-bg))]">
+    <section id="about" ref={ref} className={`bg-[hsl(var(--section-alt-bg))] section-reveal ${isVisible ? 'visible' : ''}`}>
       <div className="section-container">
         <div className="max-w-4xl mx-auto space-y-8">
           <div className="text-center space-y-4 animate-fade-in">

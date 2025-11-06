@@ -1,5 +1,6 @@
 import { Award, Trophy, Shield } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const certifications = [
   {
@@ -29,8 +30,10 @@ const certifications = [
 ];
 
 export const Certifications = () => {
+  const { ref, isVisible } = useScrollReveal();
+  
   return (
-    <section id="certifications" className="bg-[hsl(var(--section-bg))]">
+    <section id="certifications" ref={ref} className={`bg-[hsl(var(--section-bg))] section-slide-left ${isVisible ? 'visible' : ''}`}>
       <div className="section-container">
         <div className="max-w-6xl mx-auto space-y-12">
           <div className="text-center space-y-4 animate-fade-in">
