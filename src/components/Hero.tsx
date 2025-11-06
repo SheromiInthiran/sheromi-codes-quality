@@ -4,8 +4,8 @@ import profilePhoto from "@/assets/profile-photo.jpg";
 
 export const Hero = () => {
   return (
-    <section id="home" className="min-h-screen flex items-center pt-16">
-      <div className="section-container">
+    <section id="home" className="min-h-screen flex items-center pt-16 animated-bg">
+      <div className="section-container relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6 animate-fade-in">
             <div className="space-y-2">
