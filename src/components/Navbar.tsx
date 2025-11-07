@@ -7,6 +7,7 @@ const navItems = [
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
+  { label: "Professional Skill", href: "#professional-skills" },
   { label: "Projects", href: "#projects" },
   { label: "Certifications", href: "#certifications" },
   { label: "Contact", href: "#contact" },
@@ -32,9 +33,7 @@ export const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <a href="#home" className="text-xl font-bold gradient-text">
-            Sheromi.dev
-          </a>
+          
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
@@ -42,7 +41,7 @@ export const Navbar = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted"
+                className="px-4 py-2 text-base font-semibold tracking-wide uppercase text-foreground hover:text-primary transition-colors rounded-lg hover:bg-muted"
               >
                 {item.label}
               </a>
@@ -67,7 +66,7 @@ export const Navbar = () => {
               <a
                 key={item.href}
                 href={item.href}
-                className="block px-4 py-2 text-sm font-medium text-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors"
+                className="block px-4 py-2 text-base font-semibold tracking-wide uppercase text-foreground hover:text-primary hover:bg-muted rounded-lg transition-colors"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}

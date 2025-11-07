@@ -8,94 +8,96 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 340 100% 98%;
-    --foreground: 340 50% 15%;
+    /* #8E8B7D converted to HSL: 50° 7% 52% */
+    --background: 50 7% 92%;
+    --foreground: 50 10% 15%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 340 50% 15%;
+    --card: 50 7% 92%;
+    --card-foreground: 50 10% 15%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 340 50% 15%;
+    --popover: 50 7% 92%;
+    --popover-foreground: 50 10% 15%;
 
-    --primary: 340 82% 52%;
+    --primary: 50 7% 52%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 340 100% 95%;
-    --secondary-foreground: 340 50% 15%;
+    --secondary: 50 6% 85%;
+    --secondary-foreground: 50 10% 15%;
 
-    --muted: 340 60% 96%;
-    --muted-foreground: 340 20% 45%;
+    --muted: 50 6% 82%;
+    --muted-foreground: 50 5% 40%;
 
-    --accent: 320 85% 60%;
+    --accent: 50 8% 45%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 340 30% 90%;
-    --input: 340 30% 92%;
-    --ring: 340 82% 52%;
+    --border: 50 6% 75%;
+    --input: 50 6% 78%;
+    --ring: 50 7% 52%;
 
     --radius: 0.75rem;
 
     /* Custom portfolio colors */
-    --hero-gradient-from: 340 82% 52%;
-    --hero-gradient-to: 320 85% 60%;
-    --section-bg: 0 0% 100%;
-    --section-alt-bg: 340 100% 97%;
+    --hero-gradient-from: 50 7% 52%;
+    --hero-gradient-to: 50 8% 45%;
+    --section-bg: 50 7% 92%;
+    --section-alt-bg: 50 6% 88%;
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 50 6% 88%;
+    --sidebar-foreground: 50 10% 15%;
+    --sidebar-primary: 50 10% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 50 5% 80%;
+    --sidebar-accent-foreground: 50 10% 15%;
+    --sidebar-border: 50 6% 75%;
+    --sidebar-ring: 50 8% 45%;
   }
 
   .dark {
-    --background: 340 15% 10%;
-    --foreground: 340 100% 98%;
+    /* Dark version of #8E8B7D */
+    --background: 50 10% 12%;
+    --foreground: 50 5% 90%;
 
-    --card: 340 20% 12%;
-    --card-foreground: 340 100% 98%;
+    --card: 50 10% 12%;
+    --card-foreground: 50 5% 90%;
 
-    --popover: 340 20% 12%;
-    --popover-foreground: 340 100% 98%;
+    --popover: 50 10% 12%;
+    --popover-foreground: 50 5% 90%;
 
-    --primary: 340 82% 52%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 50 7% 65%;
+    --primary-foreground: 50 10% 12%;
 
-    --secondary: 340 15% 18%;
-    --secondary-foreground: 340 100% 98%;
+    --secondary: 50 8% 18%;
+    --secondary-foreground: 50 5% 90%;
 
-    --muted: 340 15% 18%;
-    --muted-foreground: 340 30% 70%;
+    --muted: 50 8% 20%;
+    --muted-foreground: 50 5% 70%;
 
-    --accent: 320 85% 60%;
-    --accent-foreground: 0 0% 100%;
+    --accent: 50 7% 75%;
+    --accent-foreground: 50 10% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 340 20% 20%;
-    --input: 340 20% 20%;
-    --ring: 340 82% 52%;
+    --border: 50 8% 25%;
+    --input: 50 8% 25%;
+    --ring: 50 7% 65%;
 
-    --hero-gradient-from: 340 82% 52%;
-    --hero-gradient-to: 320 85% 60%;
-    --section-bg: 340 15% 10%;
-    --section-alt-bg: 340 20% 14%;
+    --hero-gradient-from: 50 7% 65%;
+    --hero-gradient-to: 50 7% 75%;
+    --section-bg: 50 10% 12%;
+    --section-alt-bg: 50 8% 16%;
 
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 50 8% 14%;
+    --sidebar-foreground: 50 5% 90%;
+    --sidebar-primary: 50 7% 70%;
+    --sidebar-primary-foreground: 50 10% 12%;
+    --sidebar-accent: 50 8% 20%;
+    --sidebar-accent-foreground: 50 5% 90%;
+    --sidebar-border: 50 8% 25%;
+    --sidebar-ring: 50 7% 70%;
   }
 }
 
@@ -106,7 +108,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: 'Verdana', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   }
 
   html {
@@ -132,7 +134,7 @@ All colors MUST be HSL.
   }
 
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 hover:-translate-y-1;
+    @apply transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1;
   }
 
   .animated-bg {
@@ -141,22 +143,103 @@ All colors MUST be HSL.
 
   .animated-bg::before {
     content: '';
-    @apply absolute inset-0 opacity-20;
-    background: radial-gradient(circle at 20% 50%, hsl(var(--primary) / 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, hsl(var(--accent) / 0.4) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, hsl(var(--hero-gradient-to) / 0.3) 0%, transparent 50%);
-    animation: float 20s ease-in-out infinite;
+    @apply absolute inset-0 opacity-30;
+    background: 
+      /* Dark geometric shapes */
+      linear-gradient(30deg, transparent 49%, hsl(50 7% 20% / 0.3) 50%, transparent 51%),
+      linear-gradient(150deg, transparent 49%, hsl(50 7% 20% / 0.3) 50%, transparent 51%),
+      linear-gradient(90deg, transparent 49%, hsl(50 7% 20% / 0.2) 50%, transparent 51%),
+      radial-gradient(circle at 20% 30%, hsl(50 7% 25% / 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, hsl(50 7% 25% / 0.2) 0%, transparent 50%);
+    background-size: 100px 100px, 100px 100px, 150px 150px, 200px 200px, 200px 200px;
+    animation: geometric-float 25s ease-in-out infinite;
   }
 
-  @keyframes float {
+  @keyframes geometric-float {
+    0%, 100% {
+      transform: translate(0, 0) rotate(0deg);
+      background-position: 0% 0%, 100% 100%, 50% 50%, 20% 30%, 80% 70%;
+    }
+    25% {
+      transform: translate(-20px, 15px) rotate(1deg);
+      background-position: 25% 15%, 75% 85%, 60% 40%, 30% 40%, 70% 60%;
+    }
+    50% {
+      transform: translate(15px, -10px) rotate(-1deg);
+      background-position: 50% 30%, 50% 70%, 30% 60%, 40% 20%, 60% 80%;
+    }
+    75% {
+      transform: translate(-10px, -20px) rotate(0.5deg);
+      background-position: 75% 45%, 25% 55%, 70% 30%, 10% 50%, 90% 50%;
+    }
+  }
+
+  /* Alternative geometric animation */
+  .geometric-grid {
+    @apply relative overflow-hidden;
+  }
+
+  .geometric-grid::before {
+    content: '';
+    @apply absolute inset-0 opacity-40;
+    background: 
+      /* Grid pattern with dark geometric shapes */
+      linear-gradient(90deg, hsl(50 7% 20% / 0.1) 1px, transparent 1px),
+      linear-gradient(180deg, hsl(50 7% 20% / 0.1) 1px, transparent 1px),
+      /* Triangles */
+      conic-gradient(from 0deg at 20% 20%, hsl(50 7% 25% / 0.2) 0deg 120deg, transparent 120deg 360deg),
+      conic-gradient(from 120deg at 80% 80%, hsl(50 7% 25% / 0.2) 0deg 120deg, transparent 120deg 360deg),
+      /* Squares */
+      conic-gradient(from 45deg at 60% 40%, hsl(50 7% 22% / 0.15) 0deg 90deg, transparent 90deg 360deg),
+      conic-gradient(from 225deg at 40% 60%, hsl(50 7% 22% / 0.15) 0deg 90deg, transparent 90deg 360deg);
+    background-size: 50px 50px, 50px 50px, 150px 150px, 150px 150px, 100px 100px, 100px 100px;
+    animation: grid-move 30s linear infinite;
+  }
+
+  @keyframes grid-move {
+    0% {
+      transform: translate(0, 0);
+      background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+      transform: translate(50px, 50px);
+      background-position: 50px 50px, 50px 50px, 100px 100px, -100px -100px, 150px 150px, -150px -150px;
+    }
+  }
+
+  /* Floating shapes animation */
+  .floating-shapes {
+    @apply relative overflow-hidden;
+  }
+
+  .floating-shapes::before {
+    content: '';
+    @apply absolute inset-0 opacity-25;
+    background: 
+      /* Large dark geometric shapes */
+      radial-gradient(circle at 10% 20%, hsl(50 7% 20% / 0.3) 0%, transparent 25%),
+      radial-gradient(circle at 90% 80%, hsl(50 7% 20% / 0.3) 0%, transparent 25%),
+      /* Triangles */
+      conic-gradient(from 0deg at 30% 70%, hsl(50 7% 22% / 0.25) 0deg 120deg, transparent 120deg 360deg),
+      conic-gradient(from 180deg at 70% 30%, hsl(50 7% 22% / 0.25) 0deg 120deg, transparent 120deg 360deg),
+      /* Squares */
+      conic-gradient(from 45deg at 50% 50%, hsl(50 7% 18% / 0.2) 0deg 90deg, transparent 90deg 360deg);
+    background-size: 300px 300px, 300px 300px, 200px 200px, 200px 200px, 150px 150px;
+    animation: shape-drift 35s ease-in-out infinite;
+  }
+
+  @keyframes shape-drift {
     0%, 100% {
       transform: translate(0, 0) scale(1);
+      background-position: 10% 20%, 90% 80%, 30% 70%, 70% 30%, 50% 50%;
     }
     33% {
-      transform: translate(30px, -30px) scale(1.1);
+      transform: translate(30px, -20px) scale(1.05);
+      background-position: 20% 30%, 80% 70%, 40% 60%, 60% 40%, 60% 60%;
     }
     66% {
-      transform: translate(-20px, 20px) scale(0.9);
+      transform: translate(-20px, 30px) scale(0.95);
+      background-position: 5% 15%, 95% 85%, 20% 80%, 80% 20%, 40% 40%;
     }
   }
 
@@ -192,4 +275,56 @@ All colors MUST be HSL.
     opacity: 1;
     transform: translateX(0);
   }
+
+  /* Additional utility classes for consistent box styling */
+  .content-box {
+    @apply bg-background border-border border rounded-lg p-6;
+  }
+
+  .alt-content-box {
+    @apply bg-section-alt-bg border-border border rounded-lg p-6;
+  }
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #807c7c;
 }

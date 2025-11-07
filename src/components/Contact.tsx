@@ -55,20 +55,22 @@ export const Contact = () => {
   return (
     <section id="contact" ref={ref} className={`bg-[hsl(var(--section-alt-bg))] section-slide-right ${isVisible ? 'visible' : ''}`}>
       <div className="section-container">
-        <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center space-y-4 animate-fade-in">
+        <div className="max-w-6xl mx-auto">
+          {/* Header Section */}
+          <div className="text-left space-y-4 animate-fade-in mb-12">
             <h2 className="text-4xl lg:text-5xl font-bold gradient-text">Get in Touch</h2>
-            <div className="w-20 h-1 bg-primary mx-auto rounded-full"></div>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <div className="w-20 h-1 bg-primary rounded-full"></div>
+            <p className="text-lg text-muted-foreground max-w-2xl">
               I'm always open to discussing new projects, opportunities, or collaborations
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
-            {/* Contact Information */}
-            <div className="space-y-6 animate-fade-in">
+          {/* Contact Content - Side by Side */}
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+            {/* Contact Information - Left Side */}
+            <div className="w-full lg:w-1/2 space-y-6 animate-fade-in">
               <Card className="p-8">
-                <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-bold mb-8 text-left">Contact Information</h3>
                 <div className="space-y-4">
                   {contactInfo.map((item, index) => {
                     const Icon = item.icon;
@@ -78,14 +80,14 @@ export const Contact = () => {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-4 p-4 rounded-lg hover:bg-muted transition-colors group"
+                        className="flex items-start gap-4 p-4 rounded-lg hover:bg-muted transition-colors group border border-transparent hover:border-primary/20 text-left w-full"
                       >
-                        <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                        <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors mt-1">
                           <Icon className="h-5 w-5 text-primary" />
                         </div>
-                        <div>
-                          <p className="text-sm text-muted-foreground">{item.label}</p>
-                          <p className="font-medium">{item.value}</p>
+                        <div className="flex-1">
+                          <p className="text-sm text-muted-foreground mb-1">{item.label}</p>
+                          <p className="font-medium text-foreground break-words">{item.value}</p>
                         </div>
                       </a>
                     );
@@ -94,12 +96,12 @@ export const Contact = () => {
               </Card>
             </div>
 
-            {/* Contact Form */}
-            <div className="animate-fade-in">
+            {/* Contact Form - Right Side */}
+            <div className="w-full lg:w-1/2 animate-fade-in">
               <Card className="p-8">
-                <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div>
+                <h3 className="text-2xl font-bold mb-8 text-left">Send a Message</h3>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="space-y-4">
                     <Input
                       placeholder="Your Name"
                       value={formData.name}
@@ -107,9 +109,8 @@ export const Contact = () => {
                         setFormData({ ...formData, name: e.target.value })
                       }
                       required
+                      className="h-12 text-left"
                     />
-                  </div>
-                  <div>
                     <Input
                       type="email"
                       placeholder="Your Email"
@@ -118,17 +119,17 @@ export const Contact = () => {
                         setFormData({ ...formData, email: e.target.value })
                       }
                       required
+                      className="h-12 text-left"
                     />
-                  </div>
-                  <div>
                     <Textarea
                       placeholder="Your Message"
                       value={formData.message}
                       onChange={(e) =>
                         setFormData({ ...formData, message: e.target.value })
                       }
-                      rows={5}
+                      rows={6}
                       required
+                      className="resize-none text-left"
                     />
                   </div>
                   <Button type="submit" className="w-full hero-gradient" size="lg">

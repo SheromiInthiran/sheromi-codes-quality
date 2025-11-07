@@ -2,6 +2,7 @@ import { Code, Database, TestTube, Wrench, Users, Sparkles } from "lucide-react"
 import { Card } from "@/components/ui/card";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
+
 const skillCategories = [
   {
     icon: Code,

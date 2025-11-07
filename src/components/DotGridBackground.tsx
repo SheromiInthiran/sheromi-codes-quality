@@ -6,8 +6,8 @@ export const DotGridBackground = () => {
         <svg className="absolute w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style={{ stopColor: 'rgb(236, 72, 153)', stopOpacity: 0.1 }} />
-              <stop offset="100%" style={{ stopColor: 'rgb(249, 168, 212)', stopOpacity: 0.05 }} />
+              <stop offset="0%" style={{ stopColor: 'rgba(0, 0, 0, 1)', stopOpacity: 0.1 }} />
+              <stop offset="100%" style={{ stopColor: 'rgba(0, 0, 0, 1)', stopOpacity: 0.05 }} />
             </linearGradient>
           </defs>
           <path

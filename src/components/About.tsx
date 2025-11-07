@@ -46,10 +46,6 @@ export const About = () => {
               </div>
 
               <div className="pt-6">
-                <Button variant="outline" size="lg" className="w-full sm:w-auto">
-                  <Download className="mr-2 h-5 w-5" />
-                  Download CV
-                </Button>
               </div>
             </div>
           </Card>

@@ -1,4 +1,4 @@
-import { ExternalLink, TestTube } from "lucide-react";
+import { ExternalLink, TestTube, Github } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -11,6 +11,15 @@ const projects = [
     description: "Worked on comprehensive manual and automation testing for the RentTent platform, a rental management system. Utilized Selenium tools for automation testing to ensure reliability and performance.",
     technologies: ["Selenium", "Manual Testing", "Test Case Design", "Bug Tracking"],
     icon: TestTube,
+    githubUrl: "https://github.com/Bijon2002/RentTent-admins.git",
+  },
+  {
+    title: "OOP CodeSquad 2024",
+    role: "Developer",
+    description: "A collection of Java projects demonstrating Object-Oriented Programming (OOP) principles. This repository contains exercises and applications built during the CodeSquad 2024 program.",
+    technologies: ["Java", "IntelliJ IDEA", "Eclipse"],
+    icon: Github,
+    githubUrl: "https://github.com/AbiMabi1011/OOP_CodeSquad_2024.git",
   },
 ];
 
@@ -66,6 +75,23 @@ export const Projects = () => {
                             </Badge>
                           ))}
                         </div>
+                      </div>
+
+                      {/* GitHub Button */}
+                      <div className="flex flex-wrap gap-3 pt-2">
+                        {project.githubUrl && (
+                          <Button asChild variant="outline" size="sm">
+                            <a 
+                              href={project.githubUrl} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="flex items-center gap-2"
+                            >
+                              <Github className="h-4 w-4" />
+                              View Code on GitHub
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </div>
                   </div>
