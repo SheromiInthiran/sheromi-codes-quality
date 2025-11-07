@@ -33,27 +33,23 @@ export const Experience = () => {
                     <p className="text-muted-foreground text-sm">Current Position</p>
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     <h4 className="font-semibold text-foreground">Key Responsibilities:</h4>
-                    <ul className="space-y-2 text-muted-foreground">
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
-                        <span>Conducting comprehensive manual and automation testing to ensure product quality</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
+                    <ul className="space-y-3 text-muted-foreground">
+                      <li className="flex items-start gap-3">
+                        <span className="text-primary mt-0.5 flex-shrink-0">•</span>
                         <span>Designing detailed test cases and test scenarios for various features</span>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
+                      <li className="flex items-start gap-3">
+                        <span className="text-primary mt-0.5 flex-shrink-0">•</span>
                         <span>Identifying, documenting, and tracking bugs through their lifecycle</span>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
+                      <li className="flex items-start gap-3">
+                        <span className="text-primary mt-0.5 flex-shrink-0">•</span>
                         <span>Collaborating with development teams to ensure timely resolution of issues</span>
                       </li>
-                      <li className="flex items-start gap-2">
-                        <span className="text-primary mt-1">•</span>
+                      <li className="flex items-start gap-3">
+                        <span className="text-primary mt-0.5 flex-shrink-0">•</span>
                         <span>Utilizing testing tools like Selenium and Postman for automation</span>
                       </li>
                     </ul>
