@@ -1,228 +1,149 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@/components/ui/collapsible";
-import week1_1 from "@/assets/week1-1.jpeg";
-import week1_2 from "@/assets/week1-2.jpeg";
-import week2_1 from "@/assets/week2-1.jpeg";
-import week2_2 from "@/assets/week2-2.jpeg";
-import week5_1 from "@/assets/week5 (1).jpeg";
-import week5_2 from "@/assets/week5 (2).jpeg";
-import week5_3 from "@/assets/week5 (3).jpeg";
-import week6_1 from "@/assets/week6 (1).jpeg";
-import week6_2 from "@/assets/week6 (2).jpeg";
-import week6_3 from "@/assets/week6 (3).jpeg";
-import week7_1 from "@/assets/week7 (1).jpeg";
-import week7_3 from "@/assets/week7 (3).jpeg";
-import week8_1 from "@/assets/week8 (1).jpeg";
-import week8_2 from "@/assets/week8 (2).jpeg";
-import week8_3 from "@/assets/week8 (3).jpeg";
-import week9_1 from "@/assets/week9 (1).jpeg";
-import week9_3 from "@/assets/week9 (3).jpeg";
-import week10_1 from "@/assets/week10 (1).jpeg";
-import week10_2 from "@/assets/week10 (2).jpeg";
-import week10_3 from "@/assets/week10 (3).jpeg";
-import week11_1 from "@/assets/week11 (1).jpeg";
-import week11_2 from "@/assets/week11 (2).jpeg";
-import week11_3 from "@/assets/week11 (3).jpeg";
-import week12_1 from "@/assets/week12 (1).jpeg";
-import week12_3 from "@/assets/week12 (3).jpeg";
-import week12_4 from "@/assets/week12 (4).jpeg";
-import week12_5 from "@/assets/week12 (5).jpeg";
-import week12_6 from "@/assets/week12 (6).jpeg";
-import week12_7 from "@/assets/week12 (7).jpeg";
+
+// Import images based on your file structure
+import week1 from "@/assets/Introduction to Professional Skills 1.jpeg";
+import week2 from "@/assets/Crafting An Effective CV 2.jpeg";
+import week3 from "@/assets/Mock Interview Session 3.jpeg";
+import week4 from "@/assets/Interview Skills 4.jpeg";
+import week5 from "@/assets/Writing Professional Emails 5.jpeg";
+import week6 from "@/assets/Professional Phone Conversations 6.jpeg";
+import week7 from "@/assets/Professional Dining Etiquette 7.jpeg";
+import week8 from "@/assets/Emotional Intelligence 8.jpeg";
+import week9 from "@/assets/Portfolio Management 9.jpeg";
+import week10 from "@/assets/Writing & Identifying Abstracts 10.jpeg";
+import week11 from "@/assets/Meeting Terminology & Conduct 11.jpeg";
+import week12 from "@/assets/Community Food Festival Experience 12.jpeg";
 
 export const ProfessionalSkill = () => {
-  // Professional Skills Data
-  const professionalSkills = [
-   "Professional skills are the abilities and behaviors that help you perform well and succeed in a work environment."
-
+  // Week-based data structure
+  const weeklyData = [
+    {
+      week: 1,
+      title: "Introduction to Professional Skills",
+      description: "Professional skills are the abilities and behaviors that help you perform well and succeed in a work environment. These include communication, teamwork, problem-solving, and time management skills that are essential for career success.",
+      image: week1,
+      alt: "Professional Skills Introduction",
+    },
+    {
+      week: 2,
+      title: "Professional CV & Resume Writing",
+      description: "CV writing is the process of creating a document that highlights your education, skills, and experience to apply for a job. A well-crafted CV effectively showcases your qualifications and makes a strong first impression on potential employers.",
+      image: week2,
+      alt: "CV Writing Workshop",
+    },
+    {
+      week: 3,
+      title: "Mock Interview Session",
+      description: "Mock interviews provide practical experience in answering common interview questions and receiving constructive feedback. This helps build confidence and improve communication skills for real job interviews.",
+      image: week3,
+      alt: "Mock Interview Practice",
+    },
+    {
+      week: 4,
+      title: "Job Interview Techniques",
+      description: "Learn advanced interview skills and techniques including behavioral questions, STAR method, and effective communication strategies to succeed in various interview scenarios and make a lasting impression.",
+      image: week4,
+      alt: "Interview Techniques",
+    },
+    {
+      week: 5,
+      title: "Professional Email Writing",
+      description: "Email writing etiquette means following proper rules while writing emails, such as using polite language, clear subjects, and a professional tone to communicate effectively in business environments.",
+      image: week5,
+      alt: "Email Writing Basics",
+    },
+    {
+      week: 6,
+      title: "Professional Phone Conversations",
+      description: "Develop professional phone communication skills for business contexts, including proper greetings, active listening, clear articulation, and handling difficult conversations professionally.",
+      image: week6,
+      alt: "Phone Etiquette",
+    },
+    {
+      week: 7,
+      title: "Professional Dining Etiquette",
+      description: "Learn professional dining etiquette and business meal conduct including table manners, conversation topics, ordering etiquette, and networking skills in formal dining settings.",
+      image: week7,
+      alt: "Dining Etiquette",
+    },
+    {
+      week: 8,
+      title: "Emotional Intelligence",
+      description: "Emotional intelligence is the ability to understand and manage your own emotions and relate well to others. Develop self-awareness, empathy, and social skills for better workplace relationships.",
+      image: week8,
+      alt: "EI Fundamentals",
+    },
+    {
+      week: 9,
+      title: "Portfolio Management",
+      description: "Learn professional portfolio development and management skills to effectively showcase your work, achievements, and capabilities to potential employers or clients.",
+      image: week9,
+      alt: "Portfolio Basics",
+    },
+    {
+      week: 10,
+      title: "Writing & Identifying Abstracts",
+      description: "Master the skills of writing and identifying effective abstracts for research papers, proposals, and professional documents. Learn to summarize key information concisely and accurately.",
+      image: week10,
+      alt: "Abstract Writing",
+    },
+    {
+      week: 11,
+      title: "Meeting Terminology & Conduct",
+      description: "Understand meeting terminology, protocols, and professional conduct. Learn how to participate effectively, contribute meaningfully, and follow proper meeting etiquette in business settings.",
+      image: week11,
+      alt: "Meeting Conduct",
+    },
+    {
+      week: 12,
+      title: "Community Food Festival Experience",
+      description: "Apply professional skills in a real-world community event. Develop teamwork, leadership, event management, and community engagement skills through hands-on experience organizing a food festival.",
+      image: week12,
+      alt: "Food Festival",
+    }
   ];
 
-  const employabilitySkills = [
-    "Employability skills help people get and succeed in jobs. They include time management, professionalism, and technical abilities needed to work effectively."
-  ];
-
-  const valuesBeliefsAttitude = [
-    "Values, beliefs, attitude, and character shape who a person is. They guide behavior, influence decisions, and reflect how one treats others in daily life."
-  ];
-
-  const cvWritingSkills = [
-    "CV writing is the process of creating a document that highlights your education, skills, and experience to apply for a job."
-  ];
-
-  const interviewSkills = [
-   "Good interview manners include being on time, dressing neatly, speaking politely, and showing confidence.Bad interview manners include arriving late, dressing carelessly, interrupting, or using rude language."
-
-
-  ];
-
-  const meetingSpeakingSkills = [
-    "Meeting and speaking skills help people communicate clearly, share ideas confidently, and participate effectively in discussions."
-  ];
-
-  const emailWritingSkills = [
-    "Email writing etiquette means following proper rules while writing emails, such as using polite language, clear subjects, and a professional tone to communicate effectively."
-  ];
-
-  const proposalWritingSkills = [
-    "Proposal writing is the process of creating a document that presents an idea or plan and persuades others to approve or support it."
-  ];
-
-  const teamLeadershipSkills = [
-    "Team and leadership skills involve working well with others, guiding a group toward goals, and motivating team members to achieve success together."
-  ];
-
-  const emotionalIntelligenceSkills = [
-    "Emotional intelligence is the ability to understand and manage your own emotions and relate well to others."
-  ];
-
-  const renderSkillSection = (title: string, skills: string[], images: { src: string; alt: string; caption: string }[]) => (
-    <div className="mb-16">
-      <h3 className="text-2xl font-semibold mb-6 text-foreground">{title}</h3>
-      
-      {/* Skills List */}
-      <ul className="grid gap-4 mb-8">
-        {skills.map((skill, index) => (
-          <li key={index} className="flex items-start gap-3 text-foreground">
-            <span className="inline-block w-2 h-2 mt-2 rounded-full bg-primary flex-shrink-0" />
-            <span className="text-sm leading-relaxed">{skill}</span>
-          </li>
-        ))}
-      </ul>
-
-      {/* Preview Image with Collapsible Gallery */}
-      <Collapsible>
-        <CollapsibleTrigger className="w-full">
-          <div className="relative group cursor-pointer">
-            <img
-              src={images[0].src}
-              alt={images[0].alt}
-              className="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center flex-col gap-2">
-              <p className="text-white text-center px-4">{images[0].caption}</p>
-              <ChevronDown className="w-6 h-6 text-white" />
-              <p className="text-white text-sm">Click to see more</p>
-            </div>
-          </div>
-        </CollapsibleTrigger>
-        <CollapsibleContent className="mt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {images.slice(1).map((image, index) => (
-              <div key={index} className="relative group">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-                  <p className="text-white text-center px-4">{image.caption}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </CollapsibleContent>
-      </Collapsible>
-    </div>
-  );
-
-  const renderImageGallery = (images: { src: string; alt: string; caption: string }[]) => (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-      {images.map((image, index) => (
-        <div key={index} className="relative group">
+  const renderWeekSection = (weekData: typeof weeklyData[0]) => (
+    <div className="mb-12 p-6 bg-card rounded-lg border border-border hover:shadow-md transition-shadow duration-300">
+      <div className="flex flex-col md:flex-row gap-6 items-start">
+        {/* Week Image - Smaller size */}
+        <div className="flex-shrink-0">
           <img
-            src={image.src}
-            alt={image.alt}
-            className="w-full h-64 object-cover rounded-lg shadow-md transition-transform duration-300 group-hover:scale-105"
+            src={weekData.image}
+            alt={weekData.alt}
+            className="w-48 h-32 object-cover rounded-lg shadow-sm"
           />
-          <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg flex items-center justify-center">
-            <p className="text-white text-center px-4">{image.caption}</p>
-          </div>
         </div>
-      ))}
+        
+        {/* Content */}
+        <div className="flex-1">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-medium">
+              Week {weekData.week}
+            </span>
+            <h3 className="text-xl font-semibold text-foreground">{weekData.title}</h3>
+          </div>
+          
+          <p className="text-foreground leading-relaxed text-sm">{weekData.description}</p>
+        </div>
+      </div>
     </div>
   );
 
   return (
     <section id="professional-skills" className="py-16 bg-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold text-center mb-12 text-foreground">
-          Professional Skills Development
+          Professional Skills Development - 12 Week Program
         </h2>
 
-        {/* Professional Skills */}
-        {renderSkillSection("Professional Skills", professionalSkills, [
-          { src: week1_1, alt: "Professional Skills 1", caption: "Core Professional Skills" },
-          { src: week1_2, alt: "Professional Skills 2", caption: "Skills Enhancement" },
-          
-        ])}
-
-        {/* Employability Skills */}
-        {renderSkillSection("Employability Skills", employabilitySkills, [
-          { src: week2_1, alt: "Employability 1", caption: "Career Development Fundamentals" },
-          { src: week2_2, alt: "Employability 2", caption: "Workplace Skills Training" },
-          
-        ])}
-
-        {/* Values, Beliefs, Attitude & Character */}
-        {renderSkillSection("Values, Beliefs, Attitude & Character", valuesBeliefsAttitude, [
-          { src: week5_1, alt: "Values 1", caption: "Personal Values Workshop" },
-          { src: week5_3, alt: "Values 2", caption: "Professional Ethics" },
-          { src: week5_1, alt: "Values 3", caption: "Character Building" },
-        ])}
-
-        {/* CV Writing */}
-        {renderSkillSection("CV Writing", cvWritingSkills, [
-          { src: week6_2, alt: "CV Writing 1", caption: "CV Structure and Format" },
-          { src: week6_3, alt: "CV Writing 2", caption: "Resume Building Workshop" },
-          { src: week6_1, alt: "CV Writing 3", caption: "Professional Portfolio Development" },
-        ])}
-
-        {/* Interview Manners */}
-        {renderSkillSection("Interview Manners (Good and Bad)", interviewSkills, [
-          { src: week7_1, alt: "Interview 1", caption: "Interview Etiquette Guidelines" },
-          { src: week7_3, alt: "Interview 2", caption: "Interview Do's and Don'ts" },
-          
-        ])}
-
-        {/* Meeting and Speaking Skills */}
-        {renderSkillSection("Meeting and Speaking Skills", meetingSpeakingSkills, [
-          { src: week8_1, alt: "Meeting Skills 1", caption: "Professional Meeting Protocol" },
-          { src: week8_2, alt: "Meeting Skills 2", caption: "Public Speaking Techniques" },
-          { src: week8_3, alt: "Meeting Skills 3", caption: "Presentation Skills" },
-        ])}
-
-        {/* Email Writing Etiquettes */}
-        {renderSkillSection("Email Writing Etiquettes", emailWritingSkills, [
-          { src: week9_1, alt: "Email 1", caption: "Professional Email Standards" },
-          { src: week9_3, alt: "Email 2", caption: "Business Communication" },
-          
-        ])}
-
-        {/* Proposal Writing */}
-        {renderSkillSection("Proposal Writing", proposalWritingSkills, [
-          { src: week10_1, alt: "Proposal 1", caption: "Proposal Writing Fundamentals" },
-          { src: week10_2, alt: "Proposal 2", caption: "Business Proposal Development" },
-          { src: week10_3, alt: "Proposal 3", caption: "Project Proposal Workshop" },
-        ])}
-
-        {/* Team and Leadership */}
-        {renderSkillSection("Team and Leadership", teamLeadershipSkills, [
-          { src: week12_4, alt: "Leadership 1", caption: "Leadership Fundamentals" },
-          { src: week12_5, alt: "Leadership 2", caption: "Team Dynamics" },
-          { src: week12_7, alt: "Leadership 3", caption: "Effective Leadership" },
-        ])}
-
-        {/* Emotional Intelligence */}
-        {renderSkillSection("Emotional Intelligence", emotionalIntelligenceSkills, [
-          { src: week11_1, alt: "EI 1", caption: "Understanding Emotional Intelligence" },
-          { src: week11_2, alt: "EI 2", caption: "Developing EQ" },
-          { src: week11_3, alt: "EI 3", caption: "Emotional Intelligence in Practice" },
-        ])}
+        <div className="space-y-6">
+          {weeklyData.map((week) => (
+            <div key={week.week}>
+              {renderWeekSection(week)}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

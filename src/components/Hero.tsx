@@ -13,20 +13,26 @@ export const Hero = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center pt-16 animated-bg relative"
+      className="min-h-screen flex items-center pt-16 floating-blobs relative"
     >
-      {/* Background image layers (place images in `public/` and reference with '/filename') */}
-      <div
-        className="absolute -left-24 top-8 w-72 h-72 bg-center bg-cover opacity-60 blur-2xl motion-reduce:opacity-100 motion-reduce:blur-none pointer-events-none"
-        style={{ backgroundImage: "url('/bg-left.png')" }}
-        aria-hidden
-      />
+      {/* Static Blobs Background - No Movement */}
+      <div className="floating-blobs absolute inset-0 pointer-events-none" />
+      
+      {/* Top Waves */}
+      <div className="top-waves-container">
+        <div className="top-waves"></div>
+      </div>
 
-      <div
-        className="absolute -right-28 bottom-8 w-96 h-96 bg-center bg-cover opacity-50 blur-3xl motion-reduce:opacity-100 motion-reduce:blur-none pointer-events-none"
-        style={{ backgroundImage: "url('/bg-right.png')" }}
-        aria-hidden
-      />
+      {/* Bottom Waves */}
+      <div className="bottom-waves-container">
+        <div className="bottom-waves"></div>
+      </div>
+
+      {/* Static Emojis - No Floating */}
+      <div className="absolute top-1/4 left-10 text-2xl static-emoji">✨</div>
+      <div className="absolute top-1/3 right-20 text-xl static-emoji opacity-50">💫</div>
+      <div className="absolute bottom-1/4 left-20 text-lg static-emoji opacity-40">🌸</div>
+      <div className="absolute top-1/2 right-10 text-xl static-emoji opacity-50">🌺</div>
 
       <div className="section-container relative z-10">
         {/* Flex layout side by side on large screens */}
@@ -35,7 +41,7 @@ export const Hero = () => {
           {/* Profile Image - now circular and on the side */}
           <div className="animate-fade-in lg:w-1/2 flex justify-center lg:justify-end">
             <div className="relative">
-              <div className="absolute inset-0 hero-gradient rounded-full blur-3xl opacity-20 animate-pulse"></div>
+              <div className="absolute inset-0 hero-gradient rounded-full blur-3xl opacity-30"></div>
               <img
                 src={profilePhoto}
                 alt="Sheromi Inthirabala"
@@ -64,13 +70,13 @@ export const Hero = () => {
 
             {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-6 justify-center lg:justify-start items-center">
-              <Button asChild size="lg" className="hero-gradient">
-                <a href="#contact">
+              <Button asChild size="lg" className="hero-gradient text-white shadow-lg hover:shadow-xl transition-all duration-300">
+                <a href="#contact" className="flex items-center">
                   Get in Touch <ArrowRight className="ml-2 h-5 w-5" />
                 </a>
               </Button>
 
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300">
                 <a href="#projects">View Projects</a>
               </Button>
 
@@ -78,7 +84,7 @@ export const Hero = () => {
                 onClick={handleDownloadCV}
                 variant="outline"
                 size="lg"
-                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                className="border-accent text-accent hover:bg-accent hover:text-white transition-all duration-300"
               >
                 Download CV <Download className="ml-2 h-5 w-5" />
               </Button>
