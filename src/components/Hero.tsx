@@ -29,10 +29,10 @@ export const Hero = () => {
       </div>
 
       {/* Static Emojis - No Floating */}
-      <div className="absolute top-1/4 left-10 text-2xl static-emoji">✨</div>
-      <div className="absolute top-1/3 right-20 text-xl static-emoji opacity-50">💫</div>
-      <div className="absolute bottom-1/4 left-20 text-lg static-emoji opacity-40">🌸</div>
-      <div className="absolute top-1/2 right-10 text-xl static-emoji opacity-50">🌺</div>
+      <div className="absolute top-1/4 left-10 text-2xl static-emoji"></div>
+      <div className="absolute top-1/3 right-20 text-xl static-emoji opacity-50"></div>
+      <div className="absolute bottom-1/4 left-20 text-lg static-emoji opacity-40"></div>
+      <div className="absolute top-1/2 right-10 text-xl static-emoji opacity-50"></div>
 
       <div className="section-container relative z-10">
         {/* Flex layout side by side on large screens */}
