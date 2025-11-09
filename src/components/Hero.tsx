@@ -65,7 +65,7 @@ export const Hero = () => {
             <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto lg:mx-0">
               A passionate Computer Science undergraduate specializing in
               Software Engineering and Quality Assurance. Ensuring quality,
-              performance, and reliability in every line of code.
+              performance, and reliability in every line Of code.
             </p>
 
             {/* Buttons */}
